@@ -1,15 +1,20 @@
 extends Node2D
 
 const SPAWN_DISTANCE: float = 450.0
+const SPAWN_INTERVAL: float = 1.0
+const DIFFICULTY_CHANGE: float = 0.1
 
-const SPAWN_INTERVAL: float = 2.0
-
+var difficulty: float = 1.0
 
 @onready var enemy_scene: PackedScene = preload("res://scenes/spin_enemy.tscn")
 
 
 func _ready() -> void:
 	$Timer.start(SPAWN_INTERVAL)
+
+
+func _process(delta: float) -> void:
+	difficulty += DIFFICULTY_CHANGE * delta
 
 
 func spawn_enemy() -> void:
@@ -19,7 +24,7 @@ func spawn_enemy() -> void:
 	pos = pos.rotated(randf_range(-100, 100))
 	var dir = -pos
 	
-	enemy.init(pos, dir)
+	enemy.init(pos, dir, difficulty)
 	
 	add_child(enemy)
 

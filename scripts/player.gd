@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 const SPEED: float = 14000.0
 const DMG_COOLDOWN: float = 0.5
+const SLIGHT_RED := Color(1.0, 0.7, 0.7)
 
 var squish: float = 1.0
 var health: int = 3
@@ -64,6 +65,10 @@ func take_damage() -> void:
 	
 	for i in health:
 		health_container.get_child(i).show()
+	
+	if health == 1:
+		health_container.set_modulate(Color.RED)
+		color_mod.target_col = SLIGHT_RED
 	
 	color_mod.color = Color.RED
 	camera.start_shake()

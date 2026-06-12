@@ -9,7 +9,7 @@ radius = 13.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
 atlas = ExtResource("3_jviae")
-region = Rect2(144, 160, 16, 16)
+region = Rect2(256, 144, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypas8"]
 

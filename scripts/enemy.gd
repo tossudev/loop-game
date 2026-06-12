@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 const SPIN_SPEED: float = 1.0
-const SPEED: float = 6.5
+const SPEED: float = 9.0
 const ROT_VARIATION: float = 0.45
 const SPEED_VARIATION: float = 0.6
 
 var direction: Vector2
 var speed_var: float = 1.0
+var difficulty_speed: float = 1.0
 
 var pastel_colors: Array[Color] = [
 	Color(1.0, 0.70, 0.85),      # Pastel pink
@@ -31,11 +32,12 @@ func _physics_process(delta: float) -> void:
 	
 	rotation += SPIN_SPEED * delta
 	
-	velocity = direction * SPEED * delta * speed_var
+	velocity = direction * SPEED * delta * speed_var # * difficulty_speed
 	move_and_slide()
 
 
-func init(pos: Vector2, dir: Vector2) -> void:
+func init(pos: Vector2, dir: Vector2, diff: float) -> void:
+	difficulty_speed = diff
 	global_position = pos
 	
 	direction = dir.rotated(randf_range(-ROT_VARIATION, ROT_VARIATION))

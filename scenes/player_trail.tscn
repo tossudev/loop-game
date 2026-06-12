@@ -45,6 +45,7 @@ _data = {
 }
 
 [node name="PlayerTrail" type="Sprite2D" unique_id=201287543]
+z_index = -5
 texture_filter = 1
 texture = SubResource("AtlasTexture_8x55a")
 script = ExtResource("2_8x55a")

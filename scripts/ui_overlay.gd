@@ -8,6 +8,7 @@ var time: float = 0.0
 @onready var time_label: Label = $TimeLabel
 @onready var best_label: Label = $BestLabel
 
+
 func _ready() -> void:
 	color_mod.color = Color.BLACK
 
@@ -37,9 +38,9 @@ func _do_ui_shake() -> void:
 	$ResetInfo.rotation_degrees = cos(time * 3.0) * 2.0
 
 
-func get_formatted_time(time: float) -> String:
-	var minutes = time / 60
-	var seconds = fmod(time, 60)
+func get_formatted_time(t: float) -> String:
+	var minutes = t / 60
+	var seconds = fmod(t, 60)
 	
 	var time_formatted: String = "%02d:%02d" % [minutes, seconds]
 	return time_formatted

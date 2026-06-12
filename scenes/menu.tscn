@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c48am0w1ptxu5"]
+
+[ext_resource type="Script" uid="uid://bpmumcnmblp2l" path="res://scripts/menu.gd" id="1_mhnvy"]
+[ext_resource type="Shader" uid="uid://db3tlyvhyit16" path="res://resources/background.gdshader" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://dm6lc40v3d8xv" path="res://assets/background.png" id="2_con2f"]
+[ext_resource type="FontFile" uid="uid://bpye7lvtsn6d7" path="res://assets/ari-w9500-bold.ttf" id="3_con2f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhnvy"]
+shader = ExtResource("1_vjb58")
+
+[node name="Menu" type="Node2D" unique_id=1830003604]
+script = ExtResource("1_mhnvy")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=741296356]
+z_index = -100
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mhnvy")
+position = Vector2(152, 80)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_con2f")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=906208440]
+clip_contents = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 8.0
+offset_right = 320.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("3_con2f")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][wave amp=25.0 freq=-5.0 connected=1]
+[rainbow freq=0.2 sat=0.2 val=1.0 speed=1.0]LooooooooP"
+
+[node name="InfoLabel" type="Label" parent="." unique_id=985003804]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 88.0
+offset_right = 320.0
+offset_bottom = 144.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_con2f")
+text = "Press SPACE to start!"
+horizontal_alignment = 1
+vertical_alignment = 1
