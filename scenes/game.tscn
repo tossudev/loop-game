@@ -1,0 +1,454 @@
+[gd_scene format=4 uid="uid://bcvr8atlu7rqa"]
+
+[ext_resource type="Texture2D" uid="uid://dm6lc40v3d8xv" path="res://assets/background.png" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://cpqk5jljqufjb" path="res://scripts/game.gd" id="1_vtaks"]
+[ext_resource type="Shader" uid="uid://db3tlyvhyit16" path="res://resources/background.gdshader" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://c46goyxrp6pr3" path="res://scripts/player.gd" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://pwge8xt5isvy" path="res://assets/tilemap_packed.png" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://b27s7p3godqo8" path="res://scripts/camera.gd" id="5_u5sy4"]
+[ext_resource type="Script" uid="uid://b15jqsj0ng7dv" path="res://scripts/color_mod.gd" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://b7von7eqcudoc" path="res://scripts/ui_overlay.gd" id="7_gee14"]
+[ext_resource type="Script" uid="uid://dk4h4cs1v6knn" path="res://scripts/spawner.gd" id="7_u5sy4"]
+[ext_resource type="FontFile" uid="uid://bpye7lvtsn6d7" path="res://assets/ari-w9500-bold.ttf" id="8_0tnpc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lnu2h"]
+shader = ExtResource("1_yqjtg")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
+texture = ExtResource("3_lnu2h")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_iywne"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lbhrr")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqjtg"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbhrr"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(48, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(48, 160, 8, 8)
+
+[sub_resource type="Gradient" id="Gradient_vtaks"]
+offsets = PackedFloat32Array(0.7314815, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_iywne"]
+offsets = PackedFloat32Array(0.9097859, 0.9954128)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p57ef"]
+gradient = SubResource("Gradient_iywne")
+width = 512
+height = 1024
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(48, 160, 16, 16)
+
+[sub_resource type="Animation" id="Animation_kvpfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(7.70092e-07, 0.9979847, 0.39246932, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vtaks"]
+resource_name = "new_best"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(7.70092e-07, 0.9979847, 0.39246932, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvpfn"]
+_data = {
+&"RESET": SubResource("Animation_kvpfn"),
+&"new_best": SubResource("Animation_vtaks")
+}
+
+[node name="Game" type="Node2D" unique_id=383152919]
+script = ExtResource("1_vtaks")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1073233671]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_lnu2h")
+texture = ExtResource("1_uwrxv")
+region_enabled = true
+region_rect = Rect2(0, 0, 4096, 4096)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1803792281]
+texture_filter = 1
+tile_map_data = PackedByteArray("AADs//T/AAABAAYAAADt//T/AAABAAYAAADu//T/AAABAAYAAADv//T/AAABAAYAAADw//T/AAABAAYAAADx//T/AAABAAYAAADy//T/AAABAAYAAADz//T/AAABAAYAAAD0//T/AAABAAYAAAD1//T/AAABAAYAAAD2//T/AAABAAYAAAD3//T/AAABAAYAAAD4//T/AAABAAYAAAD5//T/AAABAAYAAAD6//T/AAABAAYAAAD7//T/AAABAAYAAAD8//T/AAABAAYAAAD9//T/AAABAAYAAAD+//T/AAABAAYAAAD///T/AAABAAYAAAAAAPT/AAABAAYAAAABAPT/AAABAAYAAAACAPT/AAABAAYAAAADAPT/AAABAAYAAAAEAPT/AAABAAYAAAAFAPT/AAABAAYAAAAGAPT/AAABAAYAAAAHAPT/AAABAAYAAAAIAPT/AAABAAYAAAAJAPT/AAABAAYAAAAKAPT/AAABAAYAAAALAPT/AAABAAYAAAAMAPT/AAABAAYAAAANAPT/AAABAAYAAAAOAPT/AAABAAYAAAAPAPT/AAABAAYAAAAQAPT/AAABAAYAAAARAPT/AAABAAYAAAASAPT/AAABAAYAAAATAPT/AAABAAYAAAATAAsAAAABAAYAAAASAAsAAAABAAYAAAARAAsAAAABAAYAAAAQAAsAAAABAAYAAAAPAAsAAAABAAYAAAAOAAsAAAABAAYAAAANAAsAAAABAAYAAAAMAAsAAAABAAYAAAALAAsAAAABAAYAAAAKAAsAAAABAAYAAAAJAAsAAAABAAYAAAAIAAsAAAABAAYAAAAHAAsAAAABAAYAAAAGAAsAAAABAAYAAAAFAAsAAAABAAYAAAAEAAsAAAABAAYAAAADAAsAAAABAAYAAAACAAsAAAABAAYAAAABAAsAAAABAAYAAAAAAAsAAAABAAYAAAD//wsAAAABAAYAAAD+/wsAAAABAAYAAAD9/wsAAAABAAYAAAD8/wsAAAABAAYAAAD7/wsAAAABAAYAAAD6/wsAAAABAAYAAAD5/wsAAAABAAYAAAD4/wsAAAABAAYAAAD3/wsAAAABAAYAAAD2/wsAAAABAAYAAAD1/wsAAAABAAYAAAD0/wsAAAABAAYAAADz/wsAAAABAAYAAADy/wsAAAABAAYAAADx/wsAAAABAAYAAADw/wsAAAABAAYAAADv/wsAAAABAAYAAADu/wsAAAABAAYAAADt/wsAAAABAAYAAADs/wsAAAABAAYAAADr/woAAAAAAAYAAADr/wkAAAAAAAYAAADr/wgAAAAAAAYAAADr/wcAAAAAAAYAAADr/wYAAAAAAAYAAADr/wUAAAAAAAYAAADr/wQAAAAAAAYAAADr/wMAAAAAAAYAAADr/wIAAAAAAAYAAADr/wEAAAAAAAYAAADr/wAAAAAAAAYAAADr////AAAAAAYAAADr//7/AAAAAAYAAADr//3/AAAAAAYAAADr//z/AAAAAAYAAADr//v/AAAAAAYAAADr//r/AAAAAAYAAADr//n/AAAAAAYAAADr//j/AAAAAAYAAADr//f/AAAAAAYAAADr//b/AAAAAAYAAADr//X/AAAAAAYAAAAUAPX/AAAAAAYAAAAUAPb/AAAAAAYAAAAUAPf/AAAAAAYAAAAUAPj/AAAAAAYAAAAUAPn/AAAAAAYAAAAUAPr/AAAAAAYAAAAUAPv/AAAAAAYAAAAUAPz/AAAAAAYAAAAUAP3/AAAAAAYAAAAUAP7/AAAAAAYAAAAUAP//AAAAAAYAAAAUAAAAAAAAAAYAAAAUAAEAAAAAAAYAAAAUAAIAAAAAAAYAAAAUAAMAAAAAAAYAAAAUAAQAAAAAAAYAAAAUAAUAAAAAAAYAAAAUAAYAAAAAAAYAAAAUAAcAAAAAAAYAAAAUAAgAAAAAAAYAAAAUAAkAAAAAAAYAAAAUAAoAAAAAAAYAAAA=")
+tile_set = SubResource("TileSet_iywne")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1233852812]
+script = ExtResource("7_u5sy4")
+
+[node name="Timer" type="Timer" parent="Spawner" unique_id=1222994666]
+one_shot = true
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=386302655 node_paths=PackedStringArray("health_container", "color_mod")]
+script = ExtResource("3_lbhrr")
+health_container = NodePath("../UI/HealthContainer")
+color_mod = NodePath("../ColorMod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=541987177]
+shape = SubResource("CircleShape2D_yqjtg")
+
+[node name="Sprite" type="Sprite2D" parent="Player" unique_id=582483105]
+texture_filter = 1
+texture = SubResource("AtlasTexture_lbhrr")
+offset = Vector2(2, -1)
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=909576391]
+zoom = Vector2(0.4, 0.4)
+position_smoothing_enabled = true
+script = ExtResource("5_u5sy4")
+
+[node name="ShakeTimer" type="Timer" parent="Player/Camera" unique_id=2023675185]
+one_shot = true
+
+[node name="DamageCooldown" type="Timer" parent="Player" unique_id=1602920547]
+one_shot = true
+
+[node name="DeathEffect" type="CPUParticles2D" parent="Player" unique_id=1503295195]
+texture_filter = 1
+emitting = false
+amount = 5
+texture = SubResource("AtlasTexture_vtaks")
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+color_ramp = SubResource("Gradient_vtaks")
+
+[node name="Fog2" type="Node2D" parent="." unique_id=972422026]
+
+[node name="Fog" type="Sprite2D" parent="Fog2" unique_id=718126367]
+position = Vector2(-536, 0)
+texture = SubResource("GradientTexture2D_p57ef")
+
+[node name="Fog2" type="Sprite2D" parent="Fog2" unique_id=1199910901]
+position = Vector2(536, 0)
+rotation = -3.1415927
+texture = SubResource("GradientTexture2D_p57ef")
+
+[node name="Fog3" type="Sprite2D" parent="Fog2" unique_id=1914570943]
+position = Vector2(0, -392)
+rotation = -4.712389
+texture = SubResource("GradientTexture2D_p57ef")
+
+[node name="Fog4" type="Sprite2D" parent="Fog2" unique_id=618922648]
+position = Vector2(0, 392)
+rotation = -1.5707964
+texture = SubResource("GradientTexture2D_p57ef")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=208156064 node_paths=PackedStringArray("color_mod")]
+script = ExtResource("7_gee14")
+color_mod = NodePath("../ColorMod")
+
+[node name="HealthContainer" type="Node2D" parent="UI" unique_id=1615537656]
+position = Vector2(8, 8)
+
+[node name="Health" type="TextureRect" parent="UI/HealthContainer" unique_id=1516933217]
+texture_filter = 1
+offset_right = 16.0
+offset_bottom = 24.0
+pivot_offset = Vector2(8, 12)
+texture = SubResource("AtlasTexture_iywne")
+stretch_mode = 3
+
+[node name="Health2" type="TextureRect" parent="UI/HealthContainer" unique_id=823343759]
+texture_filter = 1
+offset_left = 14.0
+offset_right = 30.0
+offset_bottom = 24.0
+pivot_offset = Vector2(8, 12)
+texture = SubResource("AtlasTexture_iywne")
+stretch_mode = 3
+
+[node name="Health3" type="TextureRect" parent="UI/HealthContainer" unique_id=2002821718]
+texture_filter = 1
+offset_left = 28.0
+offset_right = 44.0
+offset_bottom = 24.0
+pivot_offset = Vector2(8, 12)
+texture = SubResource("AtlasTexture_iywne")
+stretch_mode = 3
+
+[node name="TimeLabel" type="Label" parent="UI" unique_id=1844797245]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_right = 97.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_0tnpc")
+text = "00:00.000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetInfo" type="Label" parent="UI" unique_id=1244832555]
+visible = false
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.75
+offset_top = -84.0
+offset_right = 121.75
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(121.75, 42)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_0tnpc")
+text = "Press SPACE to restart!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestLabel" type="Label" parent="UI" unique_id=884061632]
+self_modulate = Color(7.70092e-07, 0.9979847, 0.39246932, 1)
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -194.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("8_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "Best time:
+00:00.000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BestLabel" unique_id=1527856813]
+libraries/ = SubResource("AnimationLibrary_kvpfn")
+
+[node name="ColorMod" type="CanvasModulate" parent="." unique_id=2131088988]
+script = ExtResource("6_p57ef")
+
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Player/Camera/ShakeTimer" to="Player/Camera" method="_on_shake_timer_timeout"]
