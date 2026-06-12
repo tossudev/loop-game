@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPIN_SPEED: float = 1.0
 const SPEED: float = 6.5
-const ROT_VARIATION: float = 0.3
+const ROT_VARIATION: float = 0.45
 const SPEED_VARIATION: float = 0.6
 
 var direction: Vector2

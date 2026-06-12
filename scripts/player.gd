@@ -13,6 +13,11 @@ var dead: bool = false
 @onready var sprite: Sprite2D = $Sprite
 @onready var camera: Camera2D = $Camera
 @onready var main: Node2D = get_parent()
+@onready var trail_scene: PackedScene = preload("res://scenes/player_trail.tscn")
+
+
+func _ready() -> void:
+	$TrailTimer.start()
 
 
 func _physics_process(delta: float) -> void:
@@ -69,3 +74,18 @@ func take_damage() -> void:
 func _update_sprite(dest: Vector2) -> void:
 	var rotation_value: float = global_position.angle_to_point(global_position + dest)
 	rotation = lerp_angle(rotation, rotation_value, 0.8) + PI/2.0
+
+
+func _on_trail_timer_timeout() -> void:
+	if dead: return
+	
+	$TrailTimer.start()
+	
+	if velocity.length() == 0.0:
+		return
+	
+	var trail_node = trail_scene.instantiate()
+	get_parent().add_child(trail_node)
+	trail_node.global_position = global_position
+	trail_node.rotation = randf_range(-100, 100)
+	

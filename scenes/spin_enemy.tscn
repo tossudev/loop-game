@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://pwge8xt5isvy" path="res://assets/tilemap_packed.png" id="3_jviae"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iywne"]
-radius = 15.0
+radius = 13.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
 atlas = ExtResource("3_jviae")
@@ -30,6 +30,7 @@ shape = SubResource("CircleShape2D_iywne")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="2" type="CollisionShape2D" parent="Area2D" unique_id=939211589]
 position = Vector2(30.45101, -73.97794)
@@ -41,6 +42,7 @@ texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="3" type="CollisionShape2D" parent="Area2D" unique_id=1241316269]
 position = Vector2(56, -56)
@@ -50,6 +52,7 @@ shape = SubResource("CircleShape2D_iywne")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="4" type="CollisionShape2D" parent="Area2D" unique_id=112793655]
 position = Vector2(73.100266, -30.468855)
@@ -61,6 +64,7 @@ texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="5" type="CollisionShape2D" parent="Area2D" unique_id=2025635640]
 position = Vector2(80, 0)
@@ -70,6 +74,7 @@ shape = SubResource("CircleShape2D_iywne")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="6" type="CollisionShape2D" parent="Area2D" unique_id=208153633]
 position = Vector2(73.97794, 30.45101)
@@ -81,6 +86,7 @@ texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="7" type="CollisionShape2D" parent="Area2D" unique_id=1768661094]
 position = Vector2(56, 56)
@@ -90,6 +96,7 @@ shape = SubResource("CircleShape2D_iywne")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="8" type="CollisionShape2D" parent="Area2D" unique_id=1003187290]
 position = Vector2(30.468855, 73.100266)
@@ -101,6 +108,7 @@ texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="9" type="CollisionShape2D" parent="Area2D" unique_id=322946079]
 position = Vector2(0, 80)
@@ -110,6 +118,7 @@ shape = SubResource("CircleShape2D_iywne")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="10" type="CollisionShape2D" parent="Area2D" unique_id=1840172467]
 position = Vector2(-30.45101, 73.97794)
@@ -121,6 +130,7 @@ texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="11" type="CollisionShape2D" parent="Area2D" unique_id=515103462]
 position = Vector2(-56, 56)
@@ -130,6 +140,7 @@ shape = SubResource("CircleShape2D_iywne")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="12" type="CollisionShape2D" parent="Area2D" unique_id=1011850369]
 position = Vector2(-73.100266, 30.468855)
@@ -141,6 +152,7 @@ texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="13" type="CollisionShape2D" parent="Area2D" unique_id=634891048]
 position = Vector2(-80, 0)
@@ -150,6 +162,7 @@ shape = SubResource("CircleShape2D_iywne")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
+offset = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1961496109]
 shape = SubResource("CircleShape2D_ypas8")

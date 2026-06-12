@@ -205,8 +205,17 @@ texture = ExtResource("3_lnu2h")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 
+[sub_resource type="Gradient" id="Gradient_iywne"]
+offsets = PackedFloat32Array(0.9188361, 0.9954128)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p57ef"]
+gradient = SubResource("Gradient_iywne")
+width = 512
+height = 1024
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_yqjtg"]
-radius = 6.0
+radius = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbhrr"]
 atlas = ExtResource("3_lnu2h")
@@ -219,15 +228,6 @@ region = Rect2(48, 160, 8, 8)
 [sub_resource type="Gradient" id="Gradient_vtaks"]
 offsets = PackedFloat32Array(0.7314815, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="Gradient" id="Gradient_iywne"]
-offsets = PackedFloat32Array(0.9097859, 0.9954128)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p57ef"]
-gradient = SubResource("Gradient_iywne")
-width = 512
-height = 1024
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
 atlas = ExtResource("3_lnu2h")
@@ -280,9 +280,10 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_lnu2h")
 texture = ExtResource("1_uwrxv")
 region_enabled = true
-region_rect = Rect2(0, 0, 4096, 4096)
+region_rect = Rect2(0, 0, 1024, 1024)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1803792281]
+visible = false
 texture_filter = 1
 tile_map_data = PackedByteArray("AADs//T/AAABAAYAAADt//T/AAABAAYAAADu//T/AAABAAYAAADv//T/AAABAAYAAADw//T/AAABAAYAAADx//T/AAABAAYAAADy//T/AAABAAYAAADz//T/AAABAAYAAAD0//T/AAABAAYAAAD1//T/AAABAAYAAAD2//T/AAABAAYAAAD3//T/AAABAAYAAAD4//T/AAABAAYAAAD5//T/AAABAAYAAAD6//T/AAABAAYAAAD7//T/AAABAAYAAAD8//T/AAABAAYAAAD9//T/AAABAAYAAAD+//T/AAABAAYAAAD///T/AAABAAYAAAAAAPT/AAABAAYAAAABAPT/AAABAAYAAAACAPT/AAABAAYAAAADAPT/AAABAAYAAAAEAPT/AAABAAYAAAAFAPT/AAABAAYAAAAGAPT/AAABAAYAAAAHAPT/AAABAAYAAAAIAPT/AAABAAYAAAAJAPT/AAABAAYAAAAKAPT/AAABAAYAAAALAPT/AAABAAYAAAAMAPT/AAABAAYAAAANAPT/AAABAAYAAAAOAPT/AAABAAYAAAAPAPT/AAABAAYAAAAQAPT/AAABAAYAAAARAPT/AAABAAYAAAASAPT/AAABAAYAAAATAPT/AAABAAYAAAATAAsAAAABAAYAAAASAAsAAAABAAYAAAARAAsAAAABAAYAAAAQAAsAAAABAAYAAAAPAAsAAAABAAYAAAAOAAsAAAABAAYAAAANAAsAAAABAAYAAAAMAAsAAAABAAYAAAALAAsAAAABAAYAAAAKAAsAAAABAAYAAAAJAAsAAAABAAYAAAAIAAsAAAABAAYAAAAHAAsAAAABAAYAAAAGAAsAAAABAAYAAAAFAAsAAAABAAYAAAAEAAsAAAABAAYAAAADAAsAAAABAAYAAAACAAsAAAABAAYAAAABAAsAAAABAAYAAAAAAAsAAAABAAYAAAD//wsAAAABAAYAAAD+/wsAAAABAAYAAAD9/wsAAAABAAYAAAD8/wsAAAABAAYAAAD7/wsAAAABAAYAAAD6/wsAAAABAAYAAAD5/wsAAAABAAYAAAD4/wsAAAABAAYAAAD3/wsAAAABAAYAAAD2/wsAAAABAAYAAAD1/wsAAAABAAYAAAD0/wsAAAABAAYAAADz/wsAAAABAAYAAADy/wsAAAABAAYAAADx/wsAAAABAAYAAADw/wsAAAABAAYAAADv/wsAAAABAAYAAADu/wsAAAABAAYAAADt/wsAAAABAAYAAADs/wsAAAABAAYAAADr/woAAAAAAAYAAADr/wkAAAAAAAYAAADr/wgAAAAAAAYAAADr/wcAAAAAAAYAAADr/wYAAAAAAAYAAADr/wUAAAAAAAYAAADr/wQAAAAAAAYAAADr/wMAAAAAAAYAAADr/wIAAAAAAAYAAADr/wEAAAAAAAYAAADr/wAAAAAAAAYAAADr////AAAAAAYAAADr//7/AAAAAAYAAADr//3/AAAAAAYAAADr//z/AAAAAAYAAADr//v/AAAAAAYAAADr//r/AAAAAAYAAADr//n/AAAAAAYAAADr//j/AAAAAAYAAADr//f/AAAAAAYAAADr//b/AAAAAAYAAADr//X/AAAAAAYAAAAUAPX/AAAAAAYAAAAUAPb/AAAAAAYAAAAUAPf/AAAAAAYAAAAUAPj/AAAAAAYAAAAUAPn/AAAAAAYAAAAUAPr/AAAAAAYAAAAUAPv/AAAAAAYAAAAUAPz/AAAAAAYAAAAUAP3/AAAAAAYAAAAUAP7/AAAAAAYAAAAUAP//AAAAAAYAAAAUAAAAAAAAAAYAAAAUAAEAAAAAAAYAAAAUAAIAAAAAAAYAAAAUAAMAAAAAAAYAAAAUAAQAAAAAAAYAAAAUAAUAAAAAAAYAAAAUAAYAAAAAAAYAAAAUAAcAAAAAAAYAAAAUAAgAAAAAAAYAAAAUAAkAAAAAAAYAAAAUAAoAAAAAAAYAAAA=")
 tile_set = SubResource("TileSet_iywne")
@@ -293,6 +294,27 @@ script = ExtResource("7_u5sy4")
 [node name="Timer" type="Timer" parent="Spawner" unique_id=1222994666]
 one_shot = true
 
+[node name="Fog" type="Node2D" parent="." unique_id=972422026]
+
+[node name="Fog" type="Sprite2D" parent="Fog" unique_id=718126367]
+position = Vector2(-536, 0)
+texture = SubResource("GradientTexture2D_p57ef")
+
+[node name="Fog2" type="Sprite2D" parent="Fog" unique_id=1199910901]
+position = Vector2(536, 0)
+rotation = -3.1415927
+texture = SubResource("GradientTexture2D_p57ef")
+
+[node name="Fog3" type="Sprite2D" parent="Fog" unique_id=1914570943]
+position = Vector2(0, -392)
+rotation = -4.712389
+texture = SubResource("GradientTexture2D_p57ef")
+
+[node name="Fog4" type="Sprite2D" parent="Fog" unique_id=618922648]
+position = Vector2(0, 392)
+rotation = -1.5707964
+texture = SubResource("GradientTexture2D_p57ef")
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=386302655 node_paths=PackedStringArray("health_container", "color_mod")]
 script = ExtResource("3_lbhrr")
 health_container = NodePath("../UI/HealthContainer")
@@ -302,12 +324,17 @@ color_mod = NodePath("../ColorMod")
 shape = SubResource("CircleShape2D_yqjtg")
 
 [node name="Sprite" type="Sprite2D" parent="Player" unique_id=582483105]
+z_index = 1
 texture_filter = 1
 texture = SubResource("AtlasTexture_lbhrr")
 offset = Vector2(2, -1)
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=909576391]
-zoom = Vector2(0.4, 0.4)
+zoom = Vector2(0.5, 0.5)
+limit_left = -350
+limit_top = -200
+limit_right = 350
+limit_bottom = 200
 position_smoothing_enabled = true
 script = ExtResource("5_u5sy4")
 
@@ -318,6 +345,7 @@ one_shot = true
 one_shot = true
 
 [node name="DeathEffect" type="CPUParticles2D" parent="Player" unique_id=1503295195]
+z_index = 1
 texture_filter = 1
 emitting = false
 amount = 5
@@ -333,26 +361,9 @@ angular_velocity_min = -180.0
 angular_velocity_max = 180.0
 color_ramp = SubResource("Gradient_vtaks")
 
-[node name="Fog2" type="Node2D" parent="." unique_id=972422026]
-
-[node name="Fog" type="Sprite2D" parent="Fog2" unique_id=718126367]
-position = Vector2(-536, 0)
-texture = SubResource("GradientTexture2D_p57ef")
-
-[node name="Fog2" type="Sprite2D" parent="Fog2" unique_id=1199910901]
-position = Vector2(536, 0)
-rotation = -3.1415927
-texture = SubResource("GradientTexture2D_p57ef")
-
-[node name="Fog3" type="Sprite2D" parent="Fog2" unique_id=1914570943]
-position = Vector2(0, -392)
-rotation = -4.712389
-texture = SubResource("GradientTexture2D_p57ef")
-
-[node name="Fog4" type="Sprite2D" parent="Fog2" unique_id=618922648]
-position = Vector2(0, 392)
-rotation = -1.5707964
-texture = SubResource("GradientTexture2D_p57ef")
+[node name="TrailTimer" type="Timer" parent="Player" unique_id=1000990271]
+wait_time = 0.035
+one_shot = true
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=208156064 node_paths=PackedStringArray("color_mod")]
 script = ExtResource("7_gee14")
@@ -452,3 +463,4 @@ script = ExtResource("6_p57ef")
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Player/Camera/ShakeTimer" to="Player/Camera" method="_on_shake_timer_timeout"]
+[connection signal="timeout" from="Player/TrailTimer" to="Player" method="_on_trail_timer_timeout"]
