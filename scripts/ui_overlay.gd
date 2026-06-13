@@ -5,8 +5,11 @@ extends CanvasLayer
 
 const DEFAULT_SHAKE_AMOUNT: float = 0.25
 const HEALTH_UI_OFFSET: float = 16.0
+const OPACITY_CHANGE: float = 0.15
+const OPACITY_CHANGE_TRESHOLD: float = 32.0
 
 var time: float = 0.0
+var ui_opacity: float = 1.0
 
 @onready var main: Node2D = get_parent()
 @onready var time_label: RichTextLabel = $TimeLabel
@@ -30,6 +33,15 @@ func _process(delta: float) -> void:
 	best_label.set_text(
 		"Best time:\n" + get_formatted_time(Scores.best_score, 6.0)
 	)
+	
+	if player.get_global_transform_with_canvas().origin.y < OPACITY_CHANGE_TRESHOLD:
+		ui_opacity = lerpf(ui_opacity, OPACITY_CHANGE, 0.2)
+	else:
+		ui_opacity = lerpf(ui_opacity, 1.0, 0.2)
+	
+	$HealthContainer.set_modulate(Color(Color.WHITE, ui_opacity))
+	$TimeLabel.set_modulate(Color(Color.WHITE, ui_opacity))
+	$BestLabel.set_modulate(Color(Color.WHITE, ui_opacity))
 	
 	_do_ui_shake()
 

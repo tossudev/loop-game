@@ -94,7 +94,7 @@ func take_damage() -> void:
 	main.get_node("UI").add_child(death_particles_ui)
 	
 	if health == 1:
-		health_container.set_modulate(Color.RED)
+		health_container.get_child(0).set_modulate(SLIGHT_RED)
 		color_mod.target_col = SLIGHT_RED
 	
 	color_mod.color = Color.RED

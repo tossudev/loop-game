@@ -14,6 +14,8 @@ Fonts
 Music  
 - I/O by Bee Hunter - [Link (Newgrounds)](https://www.newgrounds.com/audio/listen/1570847)
 	- Released under [Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
+	- Slightly cut from start and end to loop perfectly
+	- Effects (reverb and lowpass) apply on death
 
 Graphics  
 - Cursor Pixel Pack by Kenney - [Link (kenney.nl)](https://www.kenney.nl/assets/cursor-pixel-pack)
