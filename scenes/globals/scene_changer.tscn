@@ -32,6 +32,6 @@ theme_override_colors/font_color = Color(1, 0.39803553, 0.39057493, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_02qwe")
 theme_override_font_sizes/font_size = 8
-text = "Press ESC/Ⓑ again to quit"
+text = "Press ESC/(B) again to quit"
 horizontal_alignment = 1
 vertical_alignment = 1

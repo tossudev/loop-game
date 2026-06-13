@@ -55,6 +55,9 @@ func change_scene(to: String) -> void:
 
 
 func quit() -> void:
+	if OS.has_feature("web"):
+		return
+	
 	if transition_playing:
 		return
 	
