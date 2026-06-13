@@ -21,7 +21,8 @@ func _process(delta: float) -> void:
 	
 	_update_time_ui()
 	
-	if player.get_global_transform_with_canvas().origin.y < OPACITY_CHANGE_TRESHOLD:
+	var player_y: float = player.get_global_transform_with_canvas().origin.y
+	if not main.game_over and player_y < OPACITY_CHANGE_TRESHOLD:
 		ui_opacity = lerpf(ui_opacity, OPACITY_CHANGE, 0.2)
 	else:
 		ui_opacity = lerpf(ui_opacity, 1.0, 0.2)
