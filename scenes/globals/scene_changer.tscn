@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3qyyx4crkmks"]
 
 [ext_resource type="Script" uid="uid://b61gnp2j3ug1b" path="res://scripts/globals/scene_changer.gd" id="1_02qwe"]
+[ext_resource type="FontFile" uid="uid://bpye7lvtsn6d7" path="res://assets/ari-w9500-bold.ttf" id="2_02qwe"]
 
 [node name="SceneChanger" type="CanvasLayer" unique_id=77474926]
 layer = 1025
@@ -14,3 +15,23 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="QuitInfo" type="Label" parent="." unique_id=39113672]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -44.0
+offset_right = 109.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.39803553, 0.39057493, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_02qwe")
+theme_override_font_sizes/font_size = 8
+text = "Press ESC/Ⓑ again to quit"
+horizontal_alignment = 1
+vertical_alignment = 1

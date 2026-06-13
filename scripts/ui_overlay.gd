@@ -16,10 +16,6 @@ var ui_opacity: float = 1.0
 @onready var best_label: RichTextLabel = $BestLabel
 
 
-func _ready() -> void:
-	color_mod.color = Color.BLACK
-
-
 func _process(delta: float) -> void:
 	time += delta
 	

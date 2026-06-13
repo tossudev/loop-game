@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var time_survived: float = 0.0
 var game_over: bool = false
 
