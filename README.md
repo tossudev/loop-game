@@ -2,7 +2,9 @@
 
 A very small game jam game  
 Originally made in 6 hours  
-
+  
+Play on [Itch.io](https://tossu.itch.io/loooooooop)  
+  
 ![icon](icon.png)
 
 ## License & credits
