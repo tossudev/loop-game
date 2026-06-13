@@ -34,8 +34,21 @@ func _do_ui_shake() -> void:
 		_child.scale.y = (sin(time + _i)) / 6.0 + 1.0
 		
 		_child.rotation_degrees = cos(time)
+
+
+func fade_invert(out: bool = false) -> void:
+	var new_scale := Vector2(4.0, 4.0)
 	
-	$ResetInfo.rotation_degrees = cos(time * 3.0) * 2.0
+	if out:
+		new_scale = Vector2.ZERO
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(
+		$InvertEffect,
+		"scale",
+		new_scale,
+		0.8
+	).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 
 
 func get_formatted_time(t: float) -> String:

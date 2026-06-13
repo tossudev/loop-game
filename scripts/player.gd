@@ -6,10 +6,12 @@ extends CharacterBody2D
 const SPEED: float = 14000.0
 const DMG_COOLDOWN: float = 0.5
 const SLIGHT_RED := Color(1.0, 0.7, 0.7)
+const TRAIL_INTERVAL: int = 4
 
 var squish: float = 1.0
 var health: int = 3
 var dead: bool = false
+var trail_frame: int = 0
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var camera: Camera2D = $Camera
@@ -17,20 +19,13 @@ var dead: bool = false
 @onready var trail_scene: PackedScene = preload("res://scenes/player_trail.tscn")
 
 
-func _ready() -> void:
-	$TrailTimer.start()
-
-
 func _physics_process(delta: float) -> void:
 	if health <= 0:
 		return
 	
-	var input := Input.get_vector(
-		"move_left",
-		"move_right",
-		"move_up",
-		"move_down",
-	).normalized()
+	_update_trail()
+	
+	var input: Vector2 = get_input()
 	
 	if input != Vector2.ZERO:
 		_update_sprite(input)
@@ -44,6 +39,30 @@ func _physics_process(delta: float) -> void:
 	velocity = input * SPEED * delta
 	
 	move_and_slide()
+
+
+func get_input() -> Vector2:
+	var keyboard_input: Vector2 = Input.get_vector(
+		"move_left",
+		"move_right",
+		"move_up",
+		"move_down",
+	).normalized()
+	
+	var controller_input: Vector2 = Input.get_vector(
+		"controller_move_left",
+		"controller_move_right",
+		"controller_move_up",
+		"controller_move_down",
+	)
+	
+	if keyboard_input.length() != 0:
+		return keyboard_input
+	
+	elif controller_input.length() != 0:
+		return controller_input
+	
+	return Vector2.ZERO
 
 
 func take_damage() -> void:
@@ -71,6 +90,7 @@ func take_damage() -> void:
 		color_mod.target_col = SLIGHT_RED
 	
 	color_mod.color = Color.RED
+	$DamageSound.play()
 	camera.start_shake()
 	
 	$DamageCooldown.start(DMG_COOLDOWN)
@@ -81,10 +101,13 @@ func _update_sprite(dest: Vector2) -> void:
 	rotation = lerp_angle(rotation, rotation_value, 0.8) + PI/2.0
 
 
-func _on_trail_timer_timeout() -> void:
-	if dead: return
+func _update_trail() -> void:
+	trail_frame += 1
 	
-	$TrailTimer.start()
+	if trail_frame < TRAIL_INTERVAL:
+		return
+	
+	if dead: return
 	
 	if velocity.length() == 0.0:
 		return
@@ -93,4 +116,4 @@ func _on_trail_timer_timeout() -> void:
 	get_parent().add_child(trail_node)
 	trail_node.global_position = global_position
 	trail_node.rotation = randf_range(-100, 100)
-	
+	trail_frame = 0

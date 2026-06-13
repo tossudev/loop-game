@@ -1,7 +1,7 @@
 extends Node2D
 
 const SPAWN_DISTANCE: float = 450.0
-const SPAWN_INTERVAL: float = 1.0
+const SPAWN_INTERVAL: float = 1.2
 const DIFFICULTY_CHANGE: float = 0.1
 
 var difficulty: float = 1.0

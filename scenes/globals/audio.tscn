@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c3vwdk230833f"]
+
+[ext_resource type="AudioStream" uid="uid://d08t1gljmhipd" path="res://assets/sound/song.ogg" id="1_f5x4n"]
+[ext_resource type="Script" uid="uid://dssxkfivgeso1" path="res://scripts/globals/audio.gd" id="1_sqfcu"]
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_sqfcu"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_1nkcq"]
+dry = 0.8
+wet = 0.15
+
+[node name="Audio" type="Node" unique_id=521216947]
+script = ExtResource("1_sqfcu")
+music_lowpass = SubResource("AudioEffectLowPassFilter_sqfcu")
+music_reverb = SubResource("AudioEffectReverb_1nkcq")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1201860058]
+stream = ExtResource("1_f5x4n")
+volume_db = -4.0
+autoplay = true
+bus = &"Music"

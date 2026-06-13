@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://db3tlyvhyit16" path="res://resources/background.gdshader" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://dm6lc40v3d8xv" path="res://assets/background.png" id="2_con2f"]
 [ext_resource type="FontFile" uid="uid://bpye7lvtsn6d7" path="res://assets/ari-w9500-bold.ttf" id="3_con2f"]
+[ext_resource type="Script" uid="uid://qbcddlwej2g6" path="res://scripts/label_rotate.gd" id="5_4ytvr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mhnvy"]
 shader = ExtResource("1_vjb58")
@@ -47,9 +48,46 @@ offset_top = 88.0
 offset_right = 320.0
 offset_bottom = 144.0
 grow_horizontal = 2
+pivot_offset = Vector2(160, 28)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_con2f")
-text = "Press SPACE to start!"
+text = "Press SPACE or Ⓐ to start!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_4ytvr")
+
+[node name="CreditSong" type="Label" parent="." unique_id=761522541]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 158.0
+offset_right = 112.0
+offset_bottom = 177.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_con2f")
+theme_override_font_sizes/font_size = 8
+text = "Song: I/O by Bee Hunter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditGame" type="Label" parent="." unique_id=975410817]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 245.0
+offset_top = 158.0
+offset_right = 320.0
+offset_bottom = 177.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_con2f")
+theme_override_font_sizes/font_size = 8
+text = "Game by Tossu"
 horizontal_alignment = 1
 vertical_alignment = 1

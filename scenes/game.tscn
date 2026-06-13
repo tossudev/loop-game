@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://b7von7eqcudoc" path="res://scripts/ui_overlay.gd" id="7_gee14"]
 [ext_resource type="Script" uid="uid://dk4h4cs1v6knn" path="res://scripts/spawner.gd" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://bpye7lvtsn6d7" path="res://assets/ari-w9500-bold.ttf" id="8_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://4uwefou6bw02" path="res://assets/sound/damage.wav" id="8_dinhu"]
+[ext_resource type="Shader" uid="uid://b1aeame7s7le5" path="res://resources/invert.gdshader" id="10_kvpfn"]
+[ext_resource type="Script" uid="uid://qbcddlwej2g6" path="res://scripts/label_rotate.gd" id="11_kvuet"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnu2h"]
 shader = ExtResource("1_yqjtg")
@@ -233,6 +236,21 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 atlas = ExtResource("3_lnu2h")
 region = Rect2(48, 160, 16, 16)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dinhu"]
+shader = ExtResource("10_kvpfn")
+shader_parameter/target_value = 1.0
+
+[sub_resource type="Gradient" id="Gradient_kvpfn"]
+offsets = PackedFloat32Array(0.53614455, 0.6987952)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dinhu"]
+gradient = SubResource("Gradient_kvpfn")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="Animation" id="Animation_kvpfn"]
 length = 0.001
 tracks/0/type = "value"
@@ -245,7 +263,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(7.70092e-07, 0.9979847, 0.39246932, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_vtaks"]
@@ -262,7 +280,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(7.70092e-07, 0.9979847, 0.39246932, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(7.70092e-07, 0.9979847, 0.39246932, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kvpfn"]
@@ -362,9 +380,9 @@ angular_velocity_min = -180.0
 angular_velocity_max = 180.0
 color_ramp = SubResource("Gradient_vtaks")
 
-[node name="TrailTimer" type="Timer" parent="Player" unique_id=1000990271]
-wait_time = 0.035
-one_shot = true
+[node name="DamageSound" type="AudioStreamPlayer" parent="Player" unique_id=871487536]
+stream = ExtResource("8_dinhu")
+bus = &"Effects"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=208156064 node_paths=PackedStringArray("color_mod")]
 script = ExtResource("7_gee14")
@@ -399,7 +417,26 @@ pivot_offset = Vector2(8, 12)
 texture = SubResource("AtlasTexture_iywne")
 stretch_mode = 3
 
+[node name="InvertEffect" type="TextureRect" parent="UI" unique_id=746590209]
+z_index = 100
+material = SubResource("ShaderMaterial_dinhu")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(64, 64)
+texture = SubResource("GradientTexture2D_dinhu")
+
 [node name="TimeLabel" type="Label" parent="UI" unique_id=1844797245]
+z_index = 100
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -415,29 +452,8 @@ text = "00:00.000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResetInfo" type="Label" parent="UI" unique_id=1244832555]
-visible = false
-texture_filter = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -121.75
-offset_top = -84.0
-offset_right = 121.75
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset = Vector2(121.75, 42)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("8_0tnpc")
-text = "Press SPACE to restart!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="BestLabel" type="Label" parent="UI" unique_id=884061632]
-self_modulate = Color(7.70092e-07, 0.9979847, 0.39246932, 1)
+z_index = 100
 texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -459,9 +475,32 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BestLabel" unique_id=1527856813]
 libraries/ = SubResource("AnimationLibrary_kvpfn")
 
+[node name="ResetInfo" type="Label" parent="UI" unique_id=1244832555]
+visible = false
+modulate = Color(0.57287693, 1, 0.64268005, 1)
+z_index = 100
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.75
+offset_top = -84.0
+offset_right = 121.75
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(121.75, 42)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_0tnpc")
+text = "Press SPACE or Ⓐ to restart!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_kvuet")
+
 [node name="ColorMod" type="CanvasModulate" parent="." unique_id=2131088988]
 script = ExtResource("6_p57ef")
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Player/Camera/ShakeTimer" to="Player/Camera" method="_on_shake_timer_timeout"]
-[connection signal="timeout" from="Player/TrailTimer" to="Player" method="_on_trail_timer_timeout"]

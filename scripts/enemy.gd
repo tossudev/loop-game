@@ -8,6 +8,7 @@ const SPEED_VARIATION: float = 0.6
 var direction: Vector2
 var speed_var: float = 1.0
 var difficulty_speed: float = 1.0
+var spin_direction: float = 1.0
 
 var pastel_colors: Array[Color] = [
 	Color(1.0, 0.70, 0.85),      # Pastel pink
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if main.game_over:
 		return
 	
-	rotation += SPIN_SPEED * delta
+	rotation += SPIN_SPEED * spin_direction * delta
 	
 	velocity = direction * SPEED * delta * speed_var # * difficulty_speed
 	move_and_slide()
@@ -43,6 +44,9 @@ func init(pos: Vector2, dir: Vector2, diff: float) -> void:
 	direction = dir.rotated(randf_range(-ROT_VARIATION, ROT_VARIATION))
 	
 	speed_var = randf_range(1.0 - SPEED_VARIATION, 1.0 + SPEED_VARIATION)
+	
+	if randf() >= 0.5:
+		spin_direction = -1.0
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
