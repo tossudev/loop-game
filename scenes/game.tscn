@@ -435,7 +435,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(64, 64)
 texture = SubResource("GradientTexture2D_dinhu")
 
-[node name="TimeLabel" type="Label" parent="UI" unique_id=1844797245]
+[node name="TimeLabel" type="RichTextLabel" parent="UI" unique_id=829484601]
 z_index = 100
 texture_filter = 1
 anchors_preset = 5
@@ -447,14 +447,16 @@ offset_bottom = 40.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("8_0tnpc")
-text = "00:00.000"
+theme_override_fonts/normal_font = ExtResource("8_0tnpc")
+bbcode_enabled = true
+text = "00:00[font_size=10.0].000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BestLabel" type="Label" parent="UI" unique_id=884061632]
+[node name="BestLabel" type="RichTextLabel" parent="UI" unique_id=654666651]
 z_index = 100
 texture_filter = 1
+clip_contents = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -465,10 +467,11 @@ offset_bottom = 40.0
 grow_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("8_0tnpc")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/normal_font = ExtResource("8_0tnpc")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "Best time:
-00:00.000"
+00:00.[font_size=6.0]000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
