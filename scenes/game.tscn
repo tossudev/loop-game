@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b27s7p3godqo8" path="res://scripts/camera.gd" id="5_u5sy4"]
 [ext_resource type="Script" uid="uid://b15jqsj0ng7dv" path="res://scripts/color_mod.gd" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://b7von7eqcudoc" path="res://scripts/ui_overlay.gd" id="7_gee14"]
+[ext_resource type="Texture2D" uid="uid://cwosx4p5iviu5" path="res://assets/player.png" id="7_trtic"]
 [ext_resource type="Script" uid="uid://dk4h4cs1v6knn" path="res://scripts/spawner.gd" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://bpye7lvtsn6d7" path="res://assets/ari-w9500-bold.ttf" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://4uwefou6bw02" path="res://assets/sound/damage.wav" id="8_dinhu"]
@@ -220,10 +221,6 @@ height = 1024
 [sub_resource type="CircleShape2D" id="CircleShape2D_yqjtg"]
 radius = 4.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbhrr"]
-atlas = ExtResource("3_lnu2h")
-region = Rect2(48, 160, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
 atlas = ExtResource("3_lnu2h")
 region = Rect2(48, 160, 16, 16)
@@ -331,14 +328,15 @@ script = ExtResource("3_lbhrr")
 health_container = NodePath("../UI/HealthContainer")
 color_mod = NodePath("../ColorMod")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=541987177]
-shape = SubResource("CircleShape2D_yqjtg")
-
 [node name="Sprite" type="Sprite2D" parent="Player" unique_id=582483105]
 z_index = 1
 texture_filter = 1
-texture = SubResource("AtlasTexture_lbhrr")
-offset = Vector2(2, -1)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_trtic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=541987177]
+z_index = 1
+shape = SubResource("CircleShape2D_yqjtg")
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=909576391]
 zoom = Vector2(0.5, 0.5)

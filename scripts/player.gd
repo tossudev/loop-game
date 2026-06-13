@@ -7,6 +7,8 @@ const SPEED: float = 14000.0
 const DMG_COOLDOWN: float = 0.5
 const SLIGHT_RED := Color(1.0, 0.7, 0.7)
 const TRAIL_INTERVAL: int = 4
+const SPRITE_BASE_SCALE: float = 0.05
+const SQUISH_AMOUNT: float = 0.01
 
 var squish: float = 1.0
 var health: int = 3
@@ -31,12 +33,12 @@ func _physics_process(delta: float) -> void:
 	
 	if input != Vector2.ZERO:
 		_update_sprite(input)
-		squish = lerpf(squish, 0.2, 0.8)
+		squish = lerpf(squish, SQUISH_AMOUNT, 0.5)
 	else:
-		squish = lerpf(squish, 0.0, 0.8)
+		squish = lerpf(squish, 0.0, 0.5)
 	
-	#sprite.scale.x = 1.0 - squish
-	#sprite.scale.y = 1.0 + squish
+	sprite.scale.x = SPRITE_BASE_SCALE - squish
+	sprite.scale.y = SPRITE_BASE_SCALE + squish
 	
 	velocity = input * SPEED * delta
 	
@@ -106,7 +108,7 @@ func take_damage() -> void:
 
 func _update_sprite(dest: Vector2) -> void:
 	var rotation_value: float = global_position.angle_to_point(global_position + dest)
-	rotation = lerp_angle(rotation, rotation_value, 0.8) + PI/2.0
+	rotation = lerp_angle(rotation, rotation_value + PI/2.0, 0.8)
 
 
 func _update_trail() -> void:

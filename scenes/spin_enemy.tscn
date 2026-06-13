@@ -23,146 +23,159 @@ script = ExtResource("1_ypas8")
 script = ExtResource("2_3f7n6")
 
 [node name="1" type="CollisionShape2D" parent="Area2D" unique_id=1641467210]
+z_index = 1
 position = Vector2(0, -80)
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/1" unique_id=1761568992]
+z_as_relative = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="2" type="CollisionShape2D" parent="Area2D" unique_id=939211589]
+z_index = 1
 position = Vector2(30.45101, -73.97794)
 rotation = 0.39048573
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/2" unique_id=743334306]
+z_as_relative = false
 texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="3" type="CollisionShape2D" parent="Area2D" unique_id=1241316269]
+z_index = 1
 position = Vector2(56, -56)
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/3" unique_id=1839052535]
+z_as_relative = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="4" type="CollisionShape2D" parent="Area2D" unique_id=112793655]
+z_index = 1
 position = Vector2(73.100266, -30.468855)
 rotation = 0.39048573
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/4" unique_id=1676190304]
+z_as_relative = false
 texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="5" type="CollisionShape2D" parent="Area2D" unique_id=2025635640]
+z_index = 1
 position = Vector2(80, 0)
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/5" unique_id=296265575]
+z_as_relative = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="6" type="CollisionShape2D" parent="Area2D" unique_id=208153633]
+z_index = 1
 position = Vector2(73.97794, 30.45101)
 rotation = 0.39048573
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/6" unique_id=19290721]
+z_as_relative = false
 texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="7" type="CollisionShape2D" parent="Area2D" unique_id=1768661094]
+z_index = 1
 position = Vector2(56, 56)
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/7" unique_id=1187361304]
+z_as_relative = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="8" type="CollisionShape2D" parent="Area2D" unique_id=1003187290]
+z_index = 1
 position = Vector2(30.468855, 73.100266)
 rotation = 0.39048573
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/8" unique_id=1125333696]
+z_as_relative = false
 texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="9" type="CollisionShape2D" parent="Area2D" unique_id=322946079]
+z_index = 1
 position = Vector2(0, 80)
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/9" unique_id=2006651022]
+z_as_relative = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="10" type="CollisionShape2D" parent="Area2D" unique_id=1840172467]
+z_index = 1
 position = Vector2(-30.45101, 73.97794)
 rotation = 0.39048573
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/10" unique_id=1133970466]
+z_as_relative = false
 texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="11" type="CollisionShape2D" parent="Area2D" unique_id=515103462]
+z_index = 1
 position = Vector2(-56, 56)
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/11" unique_id=1277419490]
+z_as_relative = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="12" type="CollisionShape2D" parent="Area2D" unique_id=1011850369]
+z_index = 1
 position = Vector2(-73.100266, 30.468855)
 rotation = 0.39048573
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/12" unique_id=701984511]
+z_as_relative = false
 texture_filter = 1
 rotation = -0.38397244
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="13" type="CollisionShape2D" parent="Area2D" unique_id=634891048]
+z_index = 1
 position = Vector2(-80, 0)
 shape = SubResource("CircleShape2D_iywne")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/13" unique_id=1978580275]
+z_as_relative = false
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_iywne")
-offset = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1961496109]
 shape = SubResource("CircleShape2D_ypas8")
