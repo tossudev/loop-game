@@ -8,7 +8,7 @@ const DMG_COOLDOWN: float = 0.5
 const SLIGHT_RED := Color(1.0, 0.7, 0.7)
 const TRAIL_INTERVAL: int = 4
 const SPRITE_BASE_SCALE: float = 0.05
-const SQUISH_AMOUNT: float = 0.01
+const SQUISH_AMOUNT: float = 0.0125
 
 var squish: float = 1.0
 var health: int = 3
@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	
 	if input != Vector2.ZERO:
 		_update_sprite(input)
-		squish = lerpf(squish, SQUISH_AMOUNT, 0.5)
+		squish = lerpf(squish, SQUISH_AMOUNT * input.length(), 0.5)
 	else:
 		squish = lerpf(squish, 0.0, 0.5)
 	

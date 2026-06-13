@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3qyyx4crkmks"]
+
+[ext_resource type="Script" uid="uid://b61gnp2j3ug1b" path="res://scripts/globals/scene_changer.gd" id="1_02qwe"]
+
+[node name="SceneChanger" type="CanvasLayer" unique_id=77474926]
+layer = 1025
+script = ExtResource("1_02qwe")
+
+[node name="SceneFade" type="ColorRect" parent="." unique_id=830238861]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

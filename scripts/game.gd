@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if game_over:
 		if Input.is_action_just_pressed("reset"):
-			get_tree().reload_current_scene()
+			SceneChanger.change_scene("res://scenes/game.tscn")
 		
 		return
 	

@@ -22,7 +22,7 @@ Graphics
 	- Released under Creative Commons CC0
 
 Source & other assets
-- Background shader by magicpoint [Link (godotshaders.com)](https://godotshaders.com/shader/gooby-gop/)
+- Background shader by magicpoint - [Link (godotshaders.com)](https://godotshaders.com/shader/gooby-gop/)
 	- Released under Creative Commons CC0
 
 - Everything else by Tossu - [Link (tossugames.com)](https://tossugames.com)

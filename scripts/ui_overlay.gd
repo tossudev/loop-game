@@ -23,16 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time += delta
 	
-	time_label.set_text(
-		get_formatted_time(main.time_survived, 10.0)
-	)
-	
-	if main.time_survived > Scores.best_score:
-		time_label.set_modulate(Color("00fe64"))
-	
-	best_label.set_text(
-		"Best time:\n" + get_formatted_time(Scores.best_score, 6.0)
-	)
+	_update_time_ui()
 	
 	if player.get_global_transform_with_canvas().origin.y < OPACITY_CHANGE_TRESHOLD:
 		ui_opacity = lerpf(ui_opacity, OPACITY_CHANGE, 0.2)
@@ -44,6 +35,28 @@ func _process(delta: float) -> void:
 	$BestLabel.set_modulate(Color(Color.WHITE, ui_opacity))
 	
 	_do_ui_shake()
+
+
+func _update_time_ui() -> void:
+	time_label.set_text(
+		get_formatted_time(main.time_survived, 10.0)
+	)
+	
+	if Scores.best_score == 0.0:
+		best_label.hide()
+		return
+	
+	if main.time_survived > Scores.best_score:
+		time_label.set_self_modulate(Color("00fe64"))
+		best_label.set_self_modulate(Color("00fe64"))
+		best_label.set_text(
+			"Best time:\n" + get_formatted_time(main.time_survived, 6.0)
+		)
+	
+	else:
+		best_label.set_text(
+			"Best time:\n" + get_formatted_time(Scores.best_score, 6.0)
+		)
 
 
 func _do_ui_shake() -> void:
@@ -79,6 +92,7 @@ func fade_invert(out: bool = false) -> void:
 func get_formatted_time(t: float, font_size: float) -> String:
 	var milli: float = fmod(t, 1.0) * 1000.0
 	var seconds: int = int(t) % 60
+	@warning_ignore("integer_division")
 	var minutes: int = int(t) % 3600 / 60
 	
 	return "%02d:%02d[font_size=%d].%03d" % [minutes, seconds, font_size, milli]
