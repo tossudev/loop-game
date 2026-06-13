@@ -224,14 +224,6 @@ radius = 4.0
 atlas = ExtResource("3_lnu2h")
 region = Rect2(48, 160, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
-atlas = ExtResource("3_lnu2h")
-region = Rect2(48, 160, 8, 8)
-
-[sub_resource type="Gradient" id="Gradient_vtaks"]
-offsets = PackedFloat32Array(0.7314815, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
 atlas = ExtResource("3_lnu2h")
 region = Rect2(48, 160, 16, 16)
@@ -280,7 +272,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(7.70092e-07, 0.9979847, 0.39246932, 1)]
+"values": [Color(1, 1, 1, 1), Color(0, 0.99607843, 0.39215687, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kvpfn"]
@@ -363,59 +355,31 @@ one_shot = true
 [node name="DamageCooldown" type="Timer" parent="Player" unique_id=1602920547]
 one_shot = true
 
-[node name="DeathEffect" type="CPUParticles2D" parent="Player" unique_id=1503295195]
-z_index = 1
-texture_filter = 1
-emitting = false
-amount = 6
-texture = SubResource("AtlasTexture_vtaks")
-one_shot = true
-explosiveness = 1.0
-direction = Vector2(1, 1)
-spread = 180.0
-gravity = Vector2(0, 100)
-initial_velocity_min = 50.0
-initial_velocity_max = 150.0
-angular_velocity_min = -180.0
-angular_velocity_max = 180.0
-color_ramp = SubResource("Gradient_vtaks")
-
 [node name="DamageSound" type="AudioStreamPlayer" parent="Player" unique_id=871487536]
 stream = ExtResource("8_dinhu")
 bus = &"Effects"
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=208156064 node_paths=PackedStringArray("color_mod")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=208156064 node_paths=PackedStringArray("color_mod", "player")]
 script = ExtResource("7_gee14")
 color_mod = NodePath("../ColorMod")
+player = NodePath("../Player")
 
 [node name="HealthContainer" type="Node2D" parent="UI" unique_id=1615537656]
-position = Vector2(8, 8)
+position = Vector2(16, 16)
 
-[node name="Health" type="TextureRect" parent="UI/HealthContainer" unique_id=1516933217]
+[node name="Health" type="Sprite2D" parent="UI/HealthContainer" unique_id=604401984]
 texture_filter = 1
-offset_right = 16.0
-offset_bottom = 24.0
-pivot_offset = Vector2(8, 12)
 texture = SubResource("AtlasTexture_iywne")
-stretch_mode = 3
 
-[node name="Health2" type="TextureRect" parent="UI/HealthContainer" unique_id=823343759]
+[node name="Health2" type="Sprite2D" parent="UI/HealthContainer" unique_id=268037564]
 texture_filter = 1
-offset_left = 14.0
-offset_right = 30.0
-offset_bottom = 24.0
-pivot_offset = Vector2(8, 12)
+position = Vector2(14, 0)
 texture = SubResource("AtlasTexture_iywne")
-stretch_mode = 3
 
-[node name="Health3" type="TextureRect" parent="UI/HealthContainer" unique_id=2002821718]
+[node name="Health3" type="Sprite2D" parent="UI/HealthContainer" unique_id=137003268]
 texture_filter = 1
-offset_left = 28.0
-offset_right = 44.0
-offset_bottom = 24.0
-pivot_offset = Vector2(8, 12)
+position = Vector2(28, 0)
 texture = SubResource("AtlasTexture_iywne")
-stretch_mode = 3
 
 [node name="InvertEffect" type="TextureRect" parent="UI" unique_id=746590209]
 z_index = 100
@@ -468,7 +432,7 @@ grow_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/normal_font = ExtResource("8_0tnpc")
-theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 text = "Best time:
 00:00.[font_size=6.0]000"
@@ -480,7 +444,7 @@ libraries/ = SubResource("AnimationLibrary_kvpfn")
 
 [node name="ResetInfo" type="Label" parent="UI" unique_id=1244832555]
 visible = false
-modulate = Color(0.57287693, 1, 0.64268005, 1)
+modulate = Color(0.99607843, 0.52677345, 0.9155759, 1)
 z_index = 100
 texture_filter = 1
 anchors_preset = 7

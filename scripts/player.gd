@@ -16,6 +16,8 @@ var trail_frame: int = 0
 @onready var sprite: Sprite2D = $Sprite
 @onready var camera: Camera2D = $Camera
 @onready var main: Node2D = get_parent()
+
+@onready var death_scene: PackedScene = preload("res://scenes/death_effect_particles.tscn")
 @onready var trail_scene: PackedScene = preload("res://scenes/player_trail.tscn")
 
 
@@ -74,7 +76,9 @@ func take_damage() -> void:
 	if health <= 0:
 		dead = true
 		
-		$DeathEffect.set_emitting(true)
+		var death_particles = death_scene.instantiate()
+		add_child(death_particles)
+		
 		$Sprite.hide()
 		
 		main.end_game()
@@ -84,6 +88,10 @@ func take_damage() -> void:
 	
 	for i in health:
 		health_container.get_child(i).show()
+	
+	var death_particles_ui = death_scene.instantiate()
+	death_particles_ui.position = health_container.position + health_container.get_child(health).position
+	main.get_node("UI").add_child(death_particles_ui)
 	
 	if health == 1:
 		health_container.set_modulate(Color.RED)

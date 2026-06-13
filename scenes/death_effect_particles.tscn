@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://uqrcvfye43tt"]
+
+[ext_resource type="Texture2D" uid="uid://pwge8xt5isvy" path="res://assets/tilemap_packed.png" id="1_60k7b"]
+[ext_resource type="Script" uid="uid://2nicugua2cna" path="res://scripts/particles_oneshot.gd" id="2_801pd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
+atlas = ExtResource("1_60k7b")
+region = Rect2(48, 160, 8, 8)
+
+[sub_resource type="Gradient" id="Gradient_vtaks"]
+offsets = PackedFloat32Array(0.24074075, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="DeathEffect" type="CPUParticles2D" unique_id=1176035636]
+z_index = 1
+texture_filter = 1
+emitting = false
+amount = 6
+texture = SubResource("AtlasTexture_vtaks")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+color_ramp = SubResource("Gradient_vtaks")
+script = ExtResource("2_801pd")
